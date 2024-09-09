@@ -23,12 +23,10 @@ Follow these steps to set up and run the project locally:
 3. Start the development server:
     ```bash
     npm start
-
-    This will start the Nestjs application at http://localhost:5000 Default Port:4500
+This will start the Nestjs application at http://localhost:5000 Default Port:4500
     
 # Technologies Used
-TypeScript
-NestJs
+TypeScript | NestJs
 
 # Note
-Please create the env file from env.sample or rename the env.sample file to .env
+Please create the env file from env.sample or rename the env.sample file to .env and put your openAI api key in the env file in OPENAI_API_KEY variable as I've exhausted the api limit on my openAI account.
