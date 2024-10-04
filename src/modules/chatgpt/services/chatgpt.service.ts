@@ -16,6 +16,7 @@ export class ChatGptService {
 
     async getChatCompletion(messages: any[]) {
         try {
+            console.log("I am here");
             // Here I am calling the https://api.openai.com/v1/completions API
             const response = await this.openai.chat.completions.create({
                 model: 'gpt-3.5-turbo',
@@ -24,7 +25,9 @@ export class ChatGptService {
             // Right now I am getting error because I dont have available quota for sending requests to my openAI account
             return response; 
         } catch (error) {
-            return error
+            console.log("I am inside error", error);
+            throw error;
+            // return error
             // uncomment the below line after having the legit openAi Api keys
             // throw new Error(`OpenAI API request failed: ${error.message}`);
         }

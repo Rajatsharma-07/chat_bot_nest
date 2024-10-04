@@ -38,16 +38,18 @@ export class SocketService implements OnGatewayConnection, OnGatewayDisconnect {
             .then((res) => {
                 let response = res;
                 // if I get an error then will send res.error.message to client
-                if (res.error.message) {
-                    response = res.error.message;
-                }else{
+                // if (res.error.message) {
+                //     response = res.error.message;
+                // }else{
                     // else will send the message
                     this.server.emit('message', response);
-                }
+                // }
                 return;
             })
             .catch((err) => {
-                this.server.emit('message', err.error.message);
+                // if (res.error.message) {
+                        // response = res.error.message;
+                    this.server.emit('message', err.error.message);
                 return;
             });
 
